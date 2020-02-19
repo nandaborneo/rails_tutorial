@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200126171636) do
+ActiveRecord::Schema.define(version: 20200219154755) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20200126171636) do
     t.datetime "updated_at", null: false
     t.string "auth_token", limit: 30
     t.string "authentication_token", limit: 30
+    t.string "uid"
+    t.string "provider"
+    t.string "image"
     t.index ["auth_token"], name: "index_users_on_auth_token", unique: true
     t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
